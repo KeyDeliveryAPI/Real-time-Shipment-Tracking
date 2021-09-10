@@ -1,0 +1,60 @@
+POST: https://www.kd100.com/api/v1/tracking/realtime
+Content-Type: application/json
+API-Key: Enter your API Key here
+signature: MD5(json+API-Key+SecretAccessKey)
+{
+    "carrier_id": "DHL",
+    "tracking_number": "9926933413",
+    "phone": "95279527",
+    "ship_from": "Toronto, Canada",
+    "ship_to": "Los Angeles, CA, United States",
+    "area_show": 1,
+    "order": "desc"
+}
+
+//200
+{
+  "code": 200,
+  "message": "OK",
+  "data": {
+    "carrier_id": "DHL",
+    "tracking_number": "9926933413",
+    "order_status_code": 4,
+    "items": [
+      {
+        "context": "Partial delivery",
+        "time": "2021-07-09 18:47:17",
+        "order_status_description": "Delivered",
+        "area_name": "null",
+        "location": "null"
+      },
+      {
+        "context": "With delivery courier",
+        "time": "2021-07-09 18:47:02",
+        "order_status_description": "Out for delivery",
+        "area_name": "null",
+        "location": "null"
+      },
+      {
+        "context": "Arrived at Delivery Facility",
+        "time": "2021-07-08 19:13:10",
+        "order_status_description": "In transit",
+        "area_name": "null",
+        "location": "null"
+      },
+      {
+        "context": "Shipment picked up",
+        "time": "2021-05-25 04:57:39",
+        "order_status_description": "Accepted",
+        "area_name": null,
+        "location": null
+      }
+    ]
+  }
+}
+
+//60101
+{
+    "code": 60101,
+    "message": "No result found"
+}
